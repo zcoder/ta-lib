@@ -6,4 +6,5 @@ cd "$(dirname $0)"
 
 SRC=$(docker create ta-lib:runtime)
 sudo docker cp "${SRC}":/tmp/build_artifacts/ta-lib_main/.  /usr/
+sudo ldconfig
 docker rm "${SRC}"
