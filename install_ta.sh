@@ -16,7 +16,8 @@ set -euo pipefail
 DEFAULT_VER="0.6.4"
 TA_LIB_VERSION="${TA_LIB_VERSION:-$DEFAULT_VER}"
 
-SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+SOURCE="${BASH_SOURCE[0]:-$0}" 
+SCRIPT_DIR="$(cd -- "$(dirname -- "$SOURCE")" &>/dev/null && pwd)"
 LOCAL_DEB="${SCRIPT_DIR}/releases/ta-lib_${TA_LIB_VERSION}_amd64.deb"
 
 DEFAULT_URL="https://raw.githubusercontent.com/zcoder/ta-lib/build_talib_${TA_LIB_VERSION}/releases/ta-lib_${TA_LIB_VERSION}_amd64.deb"
