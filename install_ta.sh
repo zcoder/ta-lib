@@ -2,4 +2,4 @@
 
 cd "$(dirname $0)"
 
-sudo ./build_ta-lib.sh
+sudo dpkg -i ./releases/ta-lib_0.6.4_amd64.deb
