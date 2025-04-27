@@ -4,7 +4,8 @@ cd "$(dirname $0)"
 
 ./build_ta-lib.docker.sh
 
-SRC=$(docker create ta-lib:runtime)
-sudo docker cp "${SRC}":/tmp/build_artifacts/ta-lib_main/.  /usr/
+TA_LIB_VERSION="${TA_LIB_VERSION:-0.4.0}"
+SRC=$(docker create ta-lib:${TA_LIB_VERSION})
+sudo docker cp "${SRC}":/tmp/build_artifacts/ta-lib_${TA_LIB_VERSION}/.  /usr/
 sudo ldconfig
 docker rm "${SRC}"

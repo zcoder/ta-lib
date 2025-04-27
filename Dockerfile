@@ -5,7 +5,7 @@
 #######################
 FROM ubuntu:22.04 AS ta_builder
 
-ARG TA_LIB_VERSION=main
+ARG TA_LIB_VERSION=0.4.0
 ARG PREFIX=/tmp/build_artifacts/ta-lib_${TA_LIB_VERSION}
 
 ENV DEBIAN_FRONTEND=noninteractive \

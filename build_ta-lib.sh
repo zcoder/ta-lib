@@ -9,7 +9,7 @@
 set -euo pipefail
 
 # -------- configurable vars --------
-TA_LIB_VERSION="${TA_LIB_VERSION:-main}"
+TA_LIB_VERSION="${TA_LIB_VERSION:-0.4.0}"
 PREFIX="${PREFIX:-/usr/local}"
 JOBS="${JOBS:-$(nproc)}"
 SRC_DIR="/tmp/ta-lib-${TA_LIB_VERSION}/ta-lib/"
@@ -32,7 +32,7 @@ download_source() {
   [[ -d "$SRC_DIR" ]] && return
   log "Fetching ta‑lib source ($TA_LIB_VERSION)…"
   curl -L "https://github.com/zcoder/ta-lib/archive/${TA_LIB_VERSION}.zip" -o "$ARCHIVE"
-  unzip -q "$ARCHIVE" -d /tmp
+  unzip -oq "$ARCHIVE" -d /tmp
   rm -f "$ARCHIVE"
 }
 
